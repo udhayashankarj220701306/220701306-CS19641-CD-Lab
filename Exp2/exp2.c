@@ -46,7 +46,7 @@ void getstr(char* s){
 }
 int main()
 {
-  char s[1000], q[1000];
+  char s[100000];
   printf("Enter the expression: \n");
   getstr(s);
   int fp=0,bp=0, id=0,op=0,c=0,d=0;
