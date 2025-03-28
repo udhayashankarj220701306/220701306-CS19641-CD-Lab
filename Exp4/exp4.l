@@ -27,7 +27,7 @@ VEXP {EXP}|{OBAC}{EXP}{CBAC}
 {CONST}{WS}*{OBAC} {printf("Error : Open Parenthesis after Number\n");isValid=0;}
 {CBAC}{WS}*{CONST} {printf("Error : Number after Close Parenthesis\n");isValid=0;}
 {OP}{WS}*[\*/]|{OP}{WS}*{OP}{WS}*{OP} {printf("Error : Consecutive Operator\n");isValid=0;}
-^[{OP}] {printf("Error : Start with Operator\n");isValid=0;}
+^{OP} {printf("Error : Start with Operator\n");isValid=0;}
 {OP}$ {printf("Error : Ends with Operator\n");isValid=0;}
 "\n" {if(isValid==1){
 printf("Valid Arithmetic Expression\n");
