@@ -16,7 +16,7 @@ extern int yylval;
 	 yylval = c-'a';
 	 return LETTER;
 	 }
-[^a-z0-9\b]    {
+[^a-z0-9\b]   {
                  c = yytext[0];
                  return(c);
                }
