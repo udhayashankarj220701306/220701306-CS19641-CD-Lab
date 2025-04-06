@@ -1,17 +1,14 @@
 %{
 #include <stdio.h>
-void yyerror(const char *s);
-int yylex(void);
-extern char *yytext;
 void yyerror(const char *msg);
-
+extern char *yytext;
 %}
 %token IDENTIFIER
 %%
-stmt: IDENTIFIER {printf("Valid variable: %s\n",yytext);}
+stmt: IDENTIFIER {printf("Valid variable: %s\n",yytext);return 0; }
   ;
 %%
-void  yyerror(const char *s){
+void  yyerror(const char *msg){
   printf("Invalid Variable\n");
 }
 
