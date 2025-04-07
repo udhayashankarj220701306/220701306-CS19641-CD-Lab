@@ -1,24 +1,24 @@
-#ifndef _yy_defines_h_
-#define _yy_defines_h_
-
 #define ID 257
 #define NUM 258
-#define AOP 259
-#define ROP 260
-#define LOP 261
-#define OP 262
-#define CP 263
-#define OC 264
-#define CC 265
-#define SEMICOLON 266
-#define FOR 267
-#define IF 268
-#define ELSE 269
-#define WHILE 270
-#define SWITCH 271
-#define CASE 272
-#define BREAK 273
-#define DEFAULT 274
-#define UMINUS 275
-
-#endif /* _yy_defines_h_ */
+#define OP 259
+#define CP 260
+#define OC 261
+#define CC 262
+#define SC 263
+#define LE 264
+#define GE 265
+#define EQ 266
+#define NE 267
+#define AND 268
+#define OR 269
+#define INC 270
+#define DEC 271
+#define FOR 272
+#define IF 273
+#define ELSE 274
+#define WHILE 275
+#define SWITCH 276
+#define CASE 277
+#define BREAK 278
+#define DEFAULT 279
+#define UMINUS 280

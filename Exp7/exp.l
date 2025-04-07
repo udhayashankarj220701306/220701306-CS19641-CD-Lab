@@ -5,7 +5,7 @@
 
 LETTER [a-zA-Z]
 DIGIT [0-9]
-INTEGER {DIGIT}+
+INTEGER [+-]?{DIGIT}+
 US [_]
 
 %%
@@ -18,21 +18,15 @@ US [_]
 "break" {return BREAK;}
 "default" {return DEFAULT;}
 ({LETTER}|{US})({LETTER}|{DIGIT}|{US})*  {return ID;}
-{INTEGER} {return NUM;}
-
+([\+\-\*/%][=]?) {return AOP;}
+([><][=]?|[=!][=]) {return ROP;}
+("||"|"&&") {return LOP;}
+{INTEGER}(\.{DIGIT}+)? {return NUM;}
 " " ;
 "(" {return OP;}
 ")" {return CP;}
 "{" {return OC;}
 "}" {return CC;}
-":" {return SC;}
-"<=" {return GE;}
-">=" {return LE;}
-"==" {return EQ;}
-"!=" {return NE;}
-"||" {return OR;}
-"&&" {return AND;}
-"++" {return INC;}
-"--" {return DEC;}
+":" {return SEMICOLON;}
 .|\n {return yytext[0];}
 %%
