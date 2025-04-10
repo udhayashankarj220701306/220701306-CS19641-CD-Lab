@@ -1,38 +1,29 @@
 %{
 #include "y.tab.h"
 %}
-%option noyywrap
 
 LETTER [a-zA-Z]
 DIGIT [0-9]
-INTEGER {DIGIT}+
-US [_]
 
 %%
-"case" { return CASE;}
-"else" { return ELSE;}
+[\t ] ;
 "for" {return FOR;}
-"if" {return IF;}
-"switch" {return SWITCH;}
 "while" {return WHILE;}
+"if" {return IF;}
+"else" {return ELSE;}
+"switch" {return SWITCH;}
+"case" {return CASE;}
 "break" {return BREAK;}
 "default" {return DEFAULT;}
-({LETTER}|{US})({LETTER}|{DIGIT}|{US})*  {return ID;}
-{INTEGER} {return NUM;}
-
-" " ;
-"(" {return OP;}
-")" {return CP;}
-"{" {return OC;}
-"}" {return CC;}
-":" {return SC;}
-"<=" {return GE;}
-">=" {return LE;}
+{LETTER}({LETTER}|{DIGIT})* {return ID;}
+{DIGIT}+ {return NUM;}
+"<=" {return LE;}
+">=" {return GE;}
 "==" {return EQ;}
 "!=" {return NE;}
 "||" {return OR;}
 "&&" {return AND;}
-"++" {return INC;}
-"--" {return DEC;}
 .|\n {return yytext[0];}
 %%
+
+int yywrap(void){}
