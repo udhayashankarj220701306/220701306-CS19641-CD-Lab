@@ -2,6 +2,7 @@
 #include <stdio.h>
 void yyerror(const char *msg);
 extern char *yytext;
+int yylex(void);
 int regs[26];
 %}
 %token DIGIT LETTER

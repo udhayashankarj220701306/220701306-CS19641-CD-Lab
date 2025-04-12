@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 void yyerror(const char *msg);
+int yylex(void);
 %}
 %token ID NUM FOR LE GE EQ NE AND OR IF ELSE WHILE SWITCH CASE BREAK DEFAULT
 %right '='

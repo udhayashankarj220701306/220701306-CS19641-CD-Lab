@@ -1,6 +1,3 @@
-#ifndef _yy_defines_h_
-#define _yy_defines_h_
-
 #define ID 257
 #define NUM 258
 #define FOR 259
@@ -18,5 +15,3 @@
 #define BREAK 271
 #define DEFAULT 272
 #define UMINUS 273
-
-#endif /* _yy_defines_h_ */

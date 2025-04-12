@@ -27,6 +27,7 @@ struct Stack{
 	char *items[10];
 	int top;
 } Stk;
+int yylex(void);
 %}
 %union{
 	int ival;

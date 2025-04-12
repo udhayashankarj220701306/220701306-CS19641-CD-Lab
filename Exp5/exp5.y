@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 void yyerror(const char *msg);
+int yylex(void);
 extern char *yytext;
 %}
 %token IDENTIFIER
