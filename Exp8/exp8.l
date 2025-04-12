@@ -7,7 +7,7 @@
 [ \n\t]+ ;
 main {return MAIN;}
 int|float|double|char {strcpy(yylval.string,yytext); return TYPE; }
-[a-zA-Z][a-zA-Z0-9_]* {strcpy(yylval.string,yytext);return ID; }
+[a-zA-Z][a-zA-Z0-9_]* {strcpy(yylval.string,yytext); return ID; }
 [0-9]+ |
 [0-9]+\.[0-9]+ {
 yylval.dval=atof(yytext);

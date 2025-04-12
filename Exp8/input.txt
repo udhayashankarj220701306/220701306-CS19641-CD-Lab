@@ -6,4 +6,5 @@ b=a;
 c=a+10;
 c=a*b+a;
 c=a+c-b+a;
+a=a+b+c+e;
 }
