@@ -48,7 +48,51 @@ int label=0;
 %%
 program : MAIN '('')''{' body '}'
 	;
+
+S : FOR '(' expr ';' expr ';' expr ')' DEF	
+	| WHILE '(' expr')' DEF
+	| IC
+	| SC
+	;
+	
+SC : SWITCH '(' ID ')' '{' B '}'
+	; 
+B : CASES
+	|CASES D
+	;
+CASES : CASES CASES
+	| CASE NUM ':' body BREAK ';'
+	;
+D : DEFAULT ':' body BREAK ';'
+	| DEFAULT ':' body
+	;
+	
+	
+IC : IFS 
+	| IFS ELSES
+	| IFS ELIF
+	| IFS ELIF ELSES
+	;
+IFS : IF '(' expr ')' DEF 
+	;
+ELSES : ELSE DEF
+	;
+ELIF : ELSE IFS
+	| ELIF ELIF
+	;
+
+
+
+DEF : '{' body '}'
+	| expr ';'
+	| ctrlstmt
+	|
+	;
+
+
+
 body : varstmt stmtlist
+	|body ctrlstmt
 	;
 varstmt : vardecl varstmt
 	|
