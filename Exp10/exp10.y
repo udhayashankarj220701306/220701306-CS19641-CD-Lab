@@ -93,6 +93,7 @@ DEF : '{' body '}'
 
 body : varstmt stmtlist
 	|body ctrlstmt
+	|ctrlstmt
 	;
 varstmt : vardecl varstmt
 	|
