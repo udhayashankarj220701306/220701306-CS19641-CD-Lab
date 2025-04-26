@@ -42,11 +42,6 @@ void main()
 		}    
 	}
 	printf("\nAfter Copy propagation\n");
-	for (i = 0; i < n; i++) 
-	{
-		printf("%c=", op[i].l);
-		printf("%s\n", op[i].r);
-	}
 	for (i = 0; i < n - 1; i++) 
 	{
 		temp = op[i].l;
@@ -66,12 +61,6 @@ void main()
 	pr[z].l = op[n - 1].l;
 	strcpy(pr[z].r, op[n - 1].r);
 	z++;
-	printf("\nafter dead code elimination\n");
-	for (k = 0; k < z; k++)
-	{
-		printf("%c\t=", pr[k].l);
-		printf("%s\n", pr[k].r);
-	}
 
 	//sub expression elimination
 	for (m = 0; m < z; m++) 
@@ -95,11 +84,6 @@ void main()
 			}
 		}
 	}
-	printf("\neliminate common expression\n");
-	for (i = 0; i < z; i++) {
-		printf("%c\t=", pr[i].l);
-		printf("%s\n", pr[i].r);
-	}
 	// duplicate production elimination
 
 	for (i = 0; i < z; i++)
@@ -114,7 +98,6 @@ void main()
 			}
 		}
 	}
-	printf("\noptimized code\n");
 	for (i = 0; i < z; i++) 
 	{
 		if (pr[i].l != '\0') {
